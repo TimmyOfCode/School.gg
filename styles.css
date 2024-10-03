@@ -24,4 +24,29 @@ body, html {
     justify-content: center;
     font-size: 24px; /* Font size */
     font-weight: bold;
+    cursor: pointer; /* Change cursor on hover */
+}
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: green;
+}
+
+#gameCanvas {
+    border: 2px solid #000;
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#restartBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
 }
