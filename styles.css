@@ -8,11 +8,11 @@ body, html {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Set minimum box width */
-    grid-auto-rows: 200px; /* Set box height */
-    gap: 10px; /* Space between boxes */
-    height: 100%;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Set minimum box width */
+    grid-auto-rows: 500px; /* Set box height */
+    gap: 20px; /* Space between boxes */
+    height: 400%;
+    padding: 40px;
     box-sizing: border-box; /* Ensure padding doesn't affect overall size */
 }
 
