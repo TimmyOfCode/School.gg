@@ -24,16 +24,23 @@ function startGame() {
     gameContainer.classList.remove('hidden');
     gameCanvas.width = window.innerWidth - 40;
     gameCanvas.height = window.innerHeight - 100;
-    score = 0;
-    speed = 2;
-    isGameActive = true;
+    resetGame();
     document.addEventListener('keydown', jump);
     requestAnimationFrame(gameLoop);
 }
 
+function resetGame() {
+    score = 0;
+    speed = 2;
+    isGameActive = true;
+    cacti = []; // Reset cacti
+    frames = 0;
+    dino.y = gameCanvas.height - 50; // Reset dino position
+}
+
 function jump(event) {
     if (event.code === 'Space' && isGameActive) {
-        dino.y -= 50; // Jump height
+        dino.y -= 100; // Increased jump height
     }
 }
 
@@ -70,8 +77,10 @@ function drawDino() {
 }
 
 function handleCacti() {
-    if (frames % 100 === 0) {
-        cacti.push({ x: gameCanvas.width, y: gameCanvas.height - 50, width: 20, height: 50 });
+    if (frames % (100 + Math.floor(Math.random() * 100)) === 0) {
+        const cactusX = gameCanvas.width;
+        const cactusHeight = 50 + Math.floor(Math.random() * 50); // Random cactus height
+        cacti.push({ x: cactusX, y: gameCanvas.height - cactusHeight, width: 20, height: cactusHeight });
     }
     cacti.forEach((cactus, index) => {
         cactus.x -= speed;
