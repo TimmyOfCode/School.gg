@@ -1,5 +1,5 @@
 const boxContainer = document.getElementById('boxContainer');
-const numberOfBoxes = 20; // Change this number for more or fewer boxes
+const numberOfBoxes = 10; // Total number of boxes
 
 for (let i = 1; i <= numberOfBoxes; i++) {
     const box = document.createElement('div');
